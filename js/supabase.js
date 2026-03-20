@@ -15,7 +15,7 @@ export async function signInWithGoogle() {
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: 'google',
     options: {
-      redirectTo: 'https://ascenda35.github.io/Ascenda/'
+      redirectTo: 'https://ascenda35.github.io/'
     }
   });
   if (error) throw error;
