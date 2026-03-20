@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>立即批改 - Ascenda</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0A0A0F">
+</head>
+<body>
+    <div class="hero-bg"></div>
+    
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button onclick="setLanguage('zh-HK')" class="lang-btn active" data-lang="zh-HK">繁</button>
+        <span>|</span>
+        <button onclick="setLanguage('zh-CN')" class="lang-btn" data-lang="zh-CN">简</button>
+        <span>|</span>
+        <button onclick="setLanguage('en')" class="lang-btn" data-lang="en">EN</button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav-logo">
+            <span class="logo-a">A</span>
+            <span class="logo-text">SCENDA</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="nav-link" data-i18n="leaderboard">排行榜</a>
+            <a href="profile.html" class="nav-link" data-i18n="uploadScore">上載成績</a>
+            <a href="jupas.html" class="nav-link" data-i18n="dreamMap">夢想版圖</a>
+            <a href="grade.html" class="nav-link active" data-i18n="gradeNow">立即批改</a>
+            <button id="authBtn" class="auth-btn" onclick="handleAuth()">登入</button>
+        </div>
+    </nav>
+
+    <!-- Grading Section -->
+    <section class="grading-section">
+        <div class="container">
+            <div class="grading-header">
+                <h1 data-i18n="gradeNow">立即批改</h1>
+                <p>批改同學試卷，賺取代幣，提升排名</p>
+                <div class="grading-stats">
+                    <div class="stat-item">
+                        <span class="stat-value" id="userTokens">5</span>
+                        <span class="stat-label">代幣</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value" id="monthlyPoints">0</span>
+                        <span class="stat-label">本月積分</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value" id="queueLength">12</span>
+                        <span class="stat-label">等待批改</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Queue Status -->
+            <div class="queue-status">
+                <div class="queue-info">
+                    <h3>批改隊列狀態</h3>
+                    <div class="queue-metrics">
+                        <div class="metric">
+                            <span class="metric-label">平均等待時間</span>
+                            <span class="metric-value" id="avgWaitTime">5分鐘</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">今日已批改</span>
+                            <span class="metric-value" id="todayGraded">234</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">你的準確率</span>
+                            <span class="metric-value" id="accuracyRate">92%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grading Interface -->
+            <div class="grading-interface" id="gradingInterface" style="display: none;">
+                <div class="grading-main">
+                    <div class="paper-info">
+                        <div class="paper-header">
+                            <h3 id="paperSubject">科目</h3>
+                            <span class="paper-id" id="paperId">#000001</span>
+                        </div>
+                        <div class="paper-meta">
+                            <span class="question-number">題目 <span id="questionNumber">1</span></span>
+                            <span class="upload-time">上載時間: <span id="uploadTime">2分鐘前</span></span>
+                        </div>
+                    </div>
+
+                    <div class="paper-viewer">
+                        <div class="viewer-controls">
+                            <button class="control-btn" onclick="zoomIn()">🔍+</button>
+                            <button class="control-btn" onclick="zoomOut()">🔍-</button>
+                            <button class="control-btn" onclick="resetZoom()">🔄</button>
+                            <button class="control-btn" onclick="toggleFullscreen()">⛶</button>
+                        </div>
+                        <div class="paper-canvas-container">
+                            <canvas id="paperCanvas" class="paper-canvas"></canvas>
+                            <div class="canvas-overlay" id="canvasOverlay">
+                                <!-- Annotation tools overlay -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grading-tools">
+                        <div class="tool-group">
+                            <h4>批改工具</h4>
+                            <div class="tool-buttons">
+                                <button class="tool-btn active" data-tool="pen" onclick="selectTool('pen')">✏️</button>
+                                <button class="tool-btn" data-tool="highlight" onclick="selectTool('highlight')">🖍️</button>
+                                <button class="tool-btn" data-tool="text" onclick="selectTool('text')">📝</button>
+                                <button class="tool-btn" data-tool="eraser" onclick="selectTool('eraser')">🧹</button>
+                            </div>
+                        </div>
+                        <div class="tool-group">
+                            <h4>顏色</h4>
+                            <div class="color-palette">
+                                <button class="color-btn red" data-color="#FF453A" onclick="selectColor('#FF453A')"></button>
+                                <button class="color-btn green" data-color="#30D158" onclick="selectColor('#30D158')"></button>
+                                <button class="color-btn blue" data-color="#007AFF" onclick="selectColor('#007AFF')"></button>
+                                <button class="color-btn yellow" data-color="#FFD700" onclick="selectColor('#FFD700')"></button>
+                                <button class="color-btn black" data-color="#000000" onclick="selectColor('#000000')"></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="scoring-section">
+                        <h4>評分</h4>
+                        <div class="score-input">
+                            <label>此題分數 (0-滿分)</label>
+                            <input type="number" id="questionScore" min="0" max="10" step="0.5" placeholder="輸入分數">
+                            <span class="max-score">/ <span id="maxScore">10</span>分</span>
+                        </div>
+                        <div class="score-feedback">
+                            <label>評語 (可選)</label>
+                            <textarea id="scoreFeedback" placeholder="提供改進建議..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="grading-actions">
+                        <button class="secondary-btn" onclick="skipPaper()">跳過</button>
+                        <button class="secondary-btn" onclick="reportPaper()">檢舉</button>
+                        <button class="primary-btn" onclick="submitGrade()">
+                            <span class="btn-icon">✓</span>
+                            <span>提交評分</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="grading-sidebar">
+                    <div class="correct-answer">
+                        <h4>參考答案</h4>
+                        <div class="answer-content" id="correctAnswer">
+                            <!-- Reference answer content -->
+                        </div>
+                    </div>
+                    <div class="marking-scheme">
+                        <h4>評分標準</h4>
+                        <div class="scheme-content" id="markingScheme">
+                            <!-- Marking scheme content -->
+                        </div>
+                    </div>
+                    <div class="grading-history">
+                        <h4>其他評分者</h4>
+                        <div class="history-list" id="gradingHistory">
+                            <!-- Other graders' scores -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Start Grading Button -->
+            <div class="start-grading" id="startGrading">
+                <div class="start-content">
+                    <div class="start-icon">📝</div>
+                    <h3>準備好開始批改了嗎？</h3>
+                    <p>每批改一份試卷獲得 1 代幣 + 1 積分</p>
+                    <button class="primary-btn large" onclick="startGrading()">
+                        <span class="btn-icon">🚀</span>
+                        <span>開始批改</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- No Papers Available -->
+            <div class="no-papers" id="noPapers" style="display: none;">
+                <div class="no-papers-content">
+                    <div class="no-papers-icon">😴</div>
+                    <h3>暫無待批改試卷</h3>
+                    <p>所有試卷都已批改完成，請稍後再來</p>
+                    <div class="next-availability">
+                        <span>預計下一批試卷:</span>
+                        <span id="nextPapersTime">5分鐘後</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Premium Upgrade CTA -->
+            <div class="premium-cta-grading" id="premiumCta" style="display: none;">
+                <div class="cta-content">
+                    <h3>升級Premium跳過批改</h3>
+                    <p>Premium用戶無需批改即可享受完整功能</p>
+                    <button class="premium-btn" onclick="showPremium()">
+                        <span class="premium-icon">⭐</span>
+                        <span data-i18n="upgradePremium">升級Premium</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Report Modal -->
+    <div class="modal" id="reportModal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>檢舉試卷</h3>
+                <button class="modal-close" onclick="closeReportModal()">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>檢舉原因</label>
+                    <select id="reportReason">
+                        <option value="">選擇原因</option>
+                        <option value="inappropriate">內容不當</option>
+                        <option value="unclear">圖片模糊</option>
+                        <option value="incomplete">內容不完整</option>
+                        <option value="cheating">疑似作弊</option>
+                        <option value="other">其他</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>詳細說明</label>
+                    <textarea id="reportDetails" placeholder="請提供詳細說明..."></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="secondary-btn" onclick="closeReportModal()">取消</button>
+                <button class="primary-btn" onclick="submitReport()">提交檢舉</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+        <p>處理中...</p>
+    </div>
+
+    <!-- Success Toast -->
+    <div class="toast success" id="successToast">
+        <div class="toast-content">
+            <span class="toast-icon">✓</span>
+            <span class="toast-message" id="successMessage">操作成功</span>
+        </div>
+    </div>
+
+    <!-- Error Toast -->
+    <div class="toast error" id="errorToast">
+        <div class="toast-content">
+            <span class="toast-icon">✕</span>
+            <span class="toast-message" id="errorMessage">操作失敗</span>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="js/supabase.js"></script>
+    <script type="module" src="js/grading.js"></script>
+    <script type="module" src="js/watermark.js"></script>
+    <script type="module" src="js/payment.js"></script>
+    <script type="module" src="js/i18n.js"></script>
+</body>
+</html>

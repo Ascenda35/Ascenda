@@ -1,0 +1,114 @@
+{
+  "name": "Ascenda - DSE Ranking Platform",
+  "short_name": "Ascenda",
+  "description": "Hong Kong DSE student competitive ranking platform with real-time leaderboards and university admission predictions",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "zh-HK",
+  "categories": ["education", "productivity", "utilities"],
+  "icons": [
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDE5MiAxOTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiByeD0iMjQiIGZpbGw9InVybCgjZ3JhZGllbnQwXzBfMSkiLz4KPHBhdGggZD0iTTEyIDQ4SDQ4Vjg0SDEyVjQ4WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTcyIDQ4SDEwOFY4NEg3MlY0OFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0xMzIgNDhSDE2OFY4NEgxMzJWNDhaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMTIgMTA4SDQ4VjE0NEgxMlYxMDhaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNzIgMTA4SDEwOFYxNDRINzJWMTA4WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTEzMiAxMDhSDE2OFYxNDRIMTMyVjEwOFoiIGZpbGw9IndoaXRlIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50MF8wXzEiIHgxPSIwIiB5MT0iMCIgeDI9IjE5MiIgeTI9IjE5MiIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjMjU2M2ViIi8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzFkNGVkOCIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+Cjwvc3ZnPgo=",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiByeD0iNjQiIGZpbGw9InVybCgjZ3JhZGllbnQxXzBfMSkiLz4KPHBhdGggZD0iTTMyIDEyOEgxMjhWMjMySDMyVjEyOFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0xOTIgMTI4SDI4OFYyMzJIMTkyVjEyOFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0zNTIgMTI4SDQ0OFYyMzJIMzUyVjEyOFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0zMiAyODhIMTI4VjM5MkgzMlYyODhaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMTkyIDI4OEgyODhWMzkySDE5MlYyODhaIiBmaWxsPSJ3aXRlIi8+CjxwYXRoIGQ9Ik0zNTIgMjg4SDQ0OFYzOTJIMzUyVjI4OFoiIGZpbGw9IndoaXRlIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50MV8wXzEiIHgxPSIwIiB5MT0iMCIgeDI9IjUxMiIgeTI9IjUxMiIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjMjU2M2ViIi8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzFkNGVkOCIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+Cjwvc3ZnPgo=",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Leaderboard",
+      "short_name": "Ranks",
+      "description": "View DSE student rankings",
+      "url": "/",
+      "icons": [
+        {
+          "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTYiIGhlaWdodD0iOTYiIHZpZXdCb3g9IjAgMCA5NiA5NiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9Ijk2IiBoZWlnaHQ9Ijk2IiByeD0iMTIiIGZpbGw9IiMyNTYzZWIiLz4KPHBhdGggZD0iTTYgMjRIMjRWNDJINlYyNFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0zNiAyNEg1NFY0MkgzNlYyNFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik02NiAyNEg4NFY0Mkg2NlYyNFoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo=",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Profile",
+      "short_name": "Profile",
+      "description": "View your profile and upload scores",
+      "url": "/profile.html",
+      "icons": [
+        {
+          "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTYiIGhlaWdodD0iOTYiIHZpZXdCb3g9IjAgMCA5NiA5NiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9Ijk2IiBoZWlnaHQ9Ijk2IiByeD0iMTIiIGZpbGw9IiMyNTYzZWIiLz4KPGNpcmNsZSBjeD0iNDgiIGN5PSIzNiIgcj0iMTIiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0yNCA3MkMzMCA2MCAzOCA1NiA0OCA1NkM1OCA1NiA2NiA2MCA3MiA3MlY3OEgyNFY3MloiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo=",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "JUPAS Dream Map",
+      "short_name": "Dream Map",
+      "description": "Explore university programs",
+      "url": "/jupas.html",
+      "icons": [
+        {
+          "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTYiIGhlaWdodD0iOTYiIHZpZXdCb3g9IjAgMCA5NiA5NiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9Ijk2IiBoZWlnaHQ9Ijk2IiByeD0iMTIiIGZpbGw9IiMyNTYzZWIiLz4KPHBhdGggZD0iTTQ4IDEyQzUyLjQxODMgMTIgNTYgMTUuNTgxNyA1NiAyMFY0OEM1NiA1Mi40MTgzIDUyLjQxODMgNTYgNDggNTZDNDMuNTgxNyA1NiA0MCA1Mi40MTgzIDQwIDQ4VjIwQzQwIDE1LjU4MTcgNDMuNTgxNyAxMiA0OCAxMloiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0yNCA0OEMyNCA0My41ODE3IDI3LjU4MTcgNDAgMzIgNDBIMzJWMzJIMjRWNDhaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNzIgNDhDNzIgNDMuNTgxNyA2OC40MTgzIDQwIDY0IDQwSDY0VjMySDcyVjQ4WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTMyIDY0SDY0VjcySDMyVjY0WiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cg==",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIwIiBoZWlnaHQ9IjU2OCIgdmlld0JveD0iMCAwIDMyMCA1NjgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMjAiIGhlaWdodD0iNTY4IiBmaWxsPSIjZjhmOWZhIi8+CjxyZWN0IHdpZHRoPSIzMjAiIGhlaWdodD0iODAiIGZpbGw9IiMyNTYzZWIiLz4KPHRleHQgeD0iMTYwIiB5PSI0NSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjI0IiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+QXNjZW5kYTwvdGV4dD4KPHJlY3QgeD0iMjAiIHk9IjEwMCIgd2lkdGg9IjI4MCIgaGVpZ2h0PSI0MDIiIHJ4PSIxNiIgZmlsbD0id2hpdGUiLz4KPHJlY3QgeD0iNDAiIHk9IjE0MCIgd2lkdGg9IjI0MCIgaGVpZ2h0PSI0MCIgcng9IjgiIGZpbGw9IiNmM2Y0ZjYiLz4KPHJlY3QgeD0iNDAiIHk9IjIwMCIgd2lkdGg9IjI0MCIgaGVpZ2h0PSI0MCIgcng9IjgiIGZpbGw9IiNmM2Y0ZjYiLz4KPHJlY3QgeD0iNDAiIHk9IjI2MCIgd2lkdGg9IjI0MCIgaGVpZ2h0PSI0MCIgcng9IjgiIGZpbGw9IiNmM2Y0ZjYiLz4KPHJlY3QgeD0iNDAiIHk9IjMyMCIgd2lkdGg9IjI0MCIgaGVpZ2h0PSI0MCIgcng9IjgiIGZpbGw9IiNmM2Y0ZjYiLz4KPHJlY3QgeD0iNDAiIHk9IjM4MCIgd2lkdGg9IjI0MCIgaGVpZ2h0PSI0MCIgcng9IjgiIGZpbGw9IiNmM2Y0ZjYiLz4KPHJlY3QgeD0iNDAiIHk9IjQ0MCIgd2lkdGg9IjI0MCIgaGVpZ2h0PSI0MCIgcng9IjgiIGZpbGw9IiNmM2Y0ZjYiLz4KPC9zdmc+Cg==",
+      "sizes": "320x568",
+      "type": "image/svg+xml",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTI4MCIgaGVpZ2h0PSI3MjAiIHZpZXdCb3g9IjAgMCAxMjgwIDcyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjEyODAiIGhlaWdodD0iNzIwIiBmaWxsPSIjZjhmOWZhIi8+CjxyZWN0IHdpZHRoPSIxMjgwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iIzI1NjNlYiIvPgo8dGV4dCB4PSI2NDAiIHk9IjYwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5Bc2NlbmRhPC90ZXh0Pgo8cmVjdCB4PSI4MCIgeT0iMTQwIiB3aWR0aD0iMTEyMCIgaGVpZ2h0PSI1MDAiIHJ4PSIyMCIgZmlsbD0id2hpdGUiLz4KPHJlY3QgeD0iMTIwIiB5PSIyMDAiIHdpZHRoPSI1MDAiIGhlaWdodD0iNjAiIHJ4PSIxMCIgZmlsbD0iI2YzZjRmNiIvPgo8cmVjdCB4PSI2NjAiIHk9IjIwMCIgd2lkdGg9IjUwMCIgaGVpZ2h0PSI2MCIgcng9IjEwIiBmaWxsPSIjZjNmNGY2Ii8+CjxyZWN0IHg9IjEyMCIgeT0iMjgwIiB3aWR0aD0iNTAwIiBoZWlnaHQ9IjYwIiByeD0iMTAiIGZpbGw9IiNmM2Y0ZjYiLz4KPHJlY3QgeD0iNjYwIiB5PSIyODAiIHdpZHRoPSI1MDAiIGhlaWdodD0iNjAiIHJ4PSIxMCIgZmlsbD0iI2YzZjRmNiIvPgo8cmVjdCB4PSIxMjAiIHk9IjM2MCIgd2lkdGg9IjUwMCIgaGVpZ2h0PSI2MCIgcng9IjEwIiBmaWxsPSIjZjNmNGY2Ii8+CjxyZWN0IHg9IjY2MCIgeT0iMzYwIiB3aWR0aD0iNTAwIiBoZWlnaHQ9IjYwIiByeD0iMTAiIGZpbGw9IiNmM2Y0ZjYiLz4KPHJlY3QgeD0iMTIwIiB5PSI0NDAiIHdpZHRoPSI1MDAiIGhlaWdodD0iNjAiIHJ4PSIxMCIgZmlsbD0iI2YzZjRmNiIvPgo8cmVjdCB4PSI2NjAiIHk9IjQ0MCIgd2lkdGg9IjUwMCIgaGVpZ2h0PSI2MCIgcng9IjEwIiBmaWxsPSIjZjNmNGY2Ii8+CjxyZWN0IHg9IjEyMCIgeT0iNTIwIiB3aWR0aD0iNTAwIiBoZWlnaHQ9IjYwIiByeD0iMTAiIGZpbGw9IiNmM2Y0ZjYiLz4KPHJlY3QgeD0iNjYwIiB5PSI1MjAiIHdpZHRoPSI1MDAiIGhlaWdodD0iNjAiIHJ4PSIxMCIgZmlsbD0iI2YzZjRmNiIvPgo8L3N2Zz4K",
+      "sizes": "1280x720",
+      "type": "image/svg+xml",
+      "form_factor": "wide"
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  },
+  "protocol_handlers": [
+    {
+      "protocol": "web+ascenda",
+      "url": "/?handler=%s"
+    }
+  ],
+  "file_handlers": [
+    {
+      "action": "/grade.html",
+      "accept": {
+        "image/*": [".jpg", ".jpeg", ".png"]
+      }
+    }
+  ],
+  "share_target": {
+    "action": "/profile.html",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "files": [
+        {
+          "name": "scoreImage",
+          "accept": ["image/*"]
+        }
+      ]
+    }
+  }
+}

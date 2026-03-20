@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個人資料 - Ascenda</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0A0A0F">
+</head>
+<body>
+    <div class="hero-bg"></div>
+    
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button onclick="setLanguage('zh-HK')" class="lang-btn active" data-lang="zh-HK">繁</button>
+        <span>|</span>
+        <button onclick="setLanguage('zh-CN')" class="lang-btn" data-lang="zh-CN">简</button>
+        <span>|</span>
+        <button onclick="setLanguage('en')" class="lang-btn" data-lang="en">EN</button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav-logo">
+            <span class="logo-a">A</span>
+            <span class="logo-text">SCENDA</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="nav-link" data-i18n="leaderboard">排行榜</a>
+            <a href="profile.html" class="nav-link active" data-i18n="uploadScore">上載成績</a>
+            <a href="jupas.html" class="nav-link" data-i18n="dreamMap">夢想版圖</a>
+            <a href="grade.html" class="nav-link" data-i18n="gradeNow">立即批改</a>
+            <button id="authBtn" class="auth-btn" onclick="handleAuth()">登入</button>
+        </div>
+    </nav>
+
+    <!-- Profile Section -->
+    <section class="profile-section">
+        <div class="container">
+            <div class="profile-header">
+                <div class="profile-avatar">
+                    <div class="avatar-placeholder" id="userAvatar">A</div>
+                    <div class="verification-badge" id="verificationBadge" style="display: none;">
+                        <span>✓</span>
+                    </div>
+                </div>
+                <div class="profile-info">
+                    <h1 id="userName">用戶名稱</h1>
+                    <p id="userEmail">user@example.com</p>
+                    <div class="profile-stats">
+                        <div class="stat">
+                            <span class="stat-value" id="userRank">--</span>
+                            <span class="stat-label" data-i18n="rank">排名</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value" id="userScore">--</span>
+                            <span class="stat-label">總分</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value" id="userStreak">--</span>
+                            <span class="stat-label">連續天數</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-actions">
+                    <button class="secondary-btn" onclick="editProfile()">編輯資料</button>
+                    <button class="premium-btn" id="upgradeBtn" onclick="showPremium()" style="display: none;">
+                        <span class="premium-icon">⭐</span>
+                        <span data-i18n="upgradePremium">升級Premium</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Upload Time Lock -->
+            <div class="upload-lock" id="uploadLock" style="display: none;">
+                <div class="lock-content">
+                    <div class="lock-icon">🕐</div>
+                    <h3>上載時間鎖定</h3>
+                    <p>每日 07:00 - 23:59 可上載成績</p>
+                    <div class="countdown-timer" id="uploadCountdown">4小時26分鐘後開放</div>
+                </div>
+            </div>
+
+            <!-- Score Upload Section -->
+            <div class="upload-section" id="uploadSection">
+                <div class="section-header">
+                    <h2 data-i18n="uploadScore">上載成績</h2>
+                    <div class="upload-info">
+                        <span class="token-count" id="tokenCount">5</span>
+                        <span class="token-label">代幣</span>
+                    </div>
+                </div>
+
+                <div class="upload-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>科目</label>
+                            <select id="subjectSelect" required>
+                                <option value="">選擇科目</option>
+                                <option value="chinese">中文</option>
+                                <option value="english">英文</option>
+                                <option value="math">數學</option>
+                                <option value="physics">物理</option>
+                                <option value="chemistry">化學</option>
+                                <option value="biology">生物</option>
+                                <option value="econ">經濟</option>
+                                <option value="history">歷史</option>
+                                <option value="geography">地理</option>
+                                <option value="bafs">BAFS</option>
+                                <option value="cs">電腦</option>
+                                <option value="m1">M1</option>
+                                <option value="m2">M2</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>試卷名稱</label>
+                            <input type="text" id="mockName" placeholder="例如: 2025年模擬試" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>成績</label>
+                            <select id="gradeSelect" required>
+                                <option value="">選擇等級</option>
+                                <option value="8.5">5**</option>
+                                <option value="7">5*</option>
+                                <option value="5.5">5</option>
+                                <option value="4">4</option>
+                                <option value="3">3</option>
+                                <option value="2">2</option>
+                                <option value="1">1</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>證明文件 (可選)</label>
+                            <input type="file" id="proofFile" accept="image/*,.pdf">
+                            <div class="file-info">
+                                <span>支援 JPG, PNG, PDF (最大 5MB)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="watermark-warning" id="watermarkWarning" style="display: none;">
+                        <span class="warning-icon">⚠️</span>
+                        <span>此試卷已嵌入你的專屬追蹤碼，任何截圖均可追蹤至你的帳號</span>
+                    </div>
+
+                    <div class="upload-actions">
+                        <button class="primary-btn" onclick="uploadScore()" id="uploadBtn">
+                            <span class="btn-icon">📤</span>
+                            <span>上載成績</span>
+                        </button>
+                        <button class="secondary-btn" onclick="previewScore()">預覽效果</button>
+                    </div>
+                </div>
+
+                <!-- Score History -->
+                <div class="score-history">
+                    <h3>成績歷史</h3>
+                    <div class="history-list" id="historyList">
+                        <!-- Dynamically populated -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Premium Features -->
+            <div class="premium-section" id="premiumSection" style="display: none;">
+                <div class="section-header">
+                    <h2>Premium 功能</h2>
+                </div>
+                <div class="premium-features">
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3>完整排行榜</h3>
+                        <p>查看前100名完整排名，包括學校標籤</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📈</div>
+                        <h3>成績趨勢圖</h3>
+                        <p>詳細的成績進步曲線和預測分析</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <h3>JUPAS 預測</h3>
+                        <p>基於實際數據的大學入學預測</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🚫</div>
+                        <h3>無廣告體驗</h3>
+                        <p>享受乾淨無擾的學習環境</p>
+                    </div>
+                </div>
+                <div class="pricing-options">
+                    <button class="price-btn" onclick="startCheckout('monthly')">
+                        <span class="price-period" data-i18n="monthly">月費計劃 HK$28</span>
+                    </button>
+                    <button class="price-btn featured" onclick="startCheckout('yearly')">
+                        <span class="price-period" data-i18n="yearly">年費計劃 HK$198</span>
+                        <span class="price-save">節省33%</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Badges Section -->
+            <div class="badges-section">
+                <div class="section-header">
+                    <h2>成就徽章</h2>
+                </div>
+                <div class="badges-grid" id="badgesGrid">
+                    <!-- Dynamically populated -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Edit Profile Modal -->
+    <div class="modal" id="editProfileModal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>編輯個人資料</h3>
+                <button class="modal-close" onclick="closeEditProfile()">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>顯示名稱</label>
+                    <input type="text" id="editDisplayName" placeholder="你的顯示名稱">
+                </div>
+                <div class="form-group">
+                    <label>目標 JUPAS 代碼</label>
+                    <input type="text" id="editTargetJupas" placeholder="例如: JS6001">
+                </div>
+                <div class="form-group">
+                    <label>目標大學課程</label>
+                    <input type="text" id="editTargetProgram" placeholder="例如: 香港大學 醫學院">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="secondary-btn" onclick="closeEditProfile()">取消</button>
+                <button class="primary-btn" onclick="saveProfile()">儲存</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Premium Modal -->
+    <div class="modal" id="premiumModal" style="display: none;">
+        <div class="modal-content premium-modal">
+            <div class="modal-header">
+                <h2 data-i18n="upgradePremium">升級Premium</h2>
+                <button class="modal-close" onclick="closePremium()">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="premium-hero">
+                    <div class="premium-icon">⭐</div>
+                    <h3>解鎖完整功能</h3>
+                </div>
+                <div class="premium-benefits">
+                    <div class="benefit-item">
+                        <span class="benefit-icon">✓</span>
+                        <span>完整前100名排行榜</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">✓</span>
+                        <span>學校級別匿名排名</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">✓</span>
+                        <span>成績歷史趨勢圖表</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">✓</span>
+                        <span>完整 JUPAS 預測引擎</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">✓</span>
+                        <span>認證榜 + 精英榜存取</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">✓</span>
+                        <span>無廣告干擾體驗</span>
+                    </div>
+                </div>
+                <div class="pricing-options">
+                    <button class="price-btn" onclick="startCheckout('monthly')">
+                        <span class="price-period" data-i18n="monthly">月費計劃 HK$28</span>
+                    </button>
+                    <button class="price-btn featured" onclick="startCheckout('yearly')">
+                        <span class="price-period" data-i18n="yearly">年費計劃 HK$198</span>
+                        <span class="price-save">節省33%</span>
+                    </button>
+                </div>
+                <div class="rescue-pack">
+                    <h4>需要更多代幣？</h4>
+                    <button class="rescue-btn" onclick="startCheckout('rescue')">
+                        <span data-i18n="rescue">補分包 HK$5</span>
+                        <span class="rescue-detail">+30 批改代幣</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+        <p>處理中...</p>
+    </div>
+
+    <!-- Success Toast -->
+    <div class="toast success" id="successToast">
+        <div class="toast-content">
+            <span class="toast-icon">✓</span>
+            <span class="toast-message" id="successMessage">操作成功</span>
+        </div>
+    </div>
+
+    <!-- Error Toast -->
+    <div class="toast error" id="errorToast">
+        <div class="toast-content">
+            <span class="toast-icon">✕</span>
+            <span class="toast-message" id="errorMessage">操作失敗</span>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="js/supabase.js"></script>
+    <script type="module" src="js/leaderboard.js"></script>
+    <script type="module" src="js/anticheat.js"></script>
+    <script type="module" src="js/watermark.js"></script>
+    <script type="module" src="js/payment.js"></script>
+    <script type="module" src="js/i18n.js"></script>
+</body>
+</html>

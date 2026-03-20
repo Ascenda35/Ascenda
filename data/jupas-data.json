@@ -1,0 +1,856 @@
+{
+  "universities": [
+    {
+      "id": "hku",
+      "name": "The University of Hong Kong",
+      "nameZh": "香港大學",
+      "nameZhCN": "香港大学",
+      "shortName": "HKU",
+      "type": "public",
+      "ranking": {
+        "qs": 21,
+        "the": 31,
+        "local": 1
+      },
+      "programs": [
+        {
+          "id": "hku-medicine",
+          "code": "6721",
+          "name": "Bachelor of Medicine and Bachelor of Surgery",
+          "nameZh": "內外全科醫學士",
+          "nameZhCN": "内外全科医学士",
+          "faculty": "Li Ka Shing Faculty of Medicine",
+          "facultyZh": "李嘉誠醫學院",
+          "facultyZhCN": "李嘉诚医学院",
+          "duration": "6 years",
+          "credits": 288,
+          "admissionScores": {
+            "2023": {
+              "median": 44,
+              "quartile1": 43,
+              "quartile3": 45,
+              "lowest": 42
+            },
+            "2024": {
+              "median": 45,
+              "quartile1": 44,
+              "quartile3": 46,
+              "lowest": 43
+            },
+            "2025": {
+              "predicted": 45,
+              "range": "43-46"
+            }
+          },
+          "subjectRequirements": {
+            "core": ["Chinese", "English", "Mathematics", "Liberal Studies"],
+            "elective1": "Chemistry",
+            "elective2": "Biology or Physics",
+            "m1m2": false
+          },
+          "interview": true,
+          "quota": 265,
+          "competitionRatio": 85.2
+        },
+        {
+          "id": "hku-law",
+          "code": "6801",
+          "name": "Bachelor of Laws",
+          "nameZh": "法學士",
+          "nameZhCN": "法学士",
+          "faculty": "Faculty of Law",
+          "facultyZh": "法律學院",
+          "facultyZhCN": "法学院",
+          "duration": "4 years",
+          "credits": 192,
+          "admissionScores": {
+            "2023": {
+              "median": 41,
+              "quartile1": 39,
+              "quartile3": 43,
+              "lowest": 38
+            },
+            "2024": {
+              "median": 42,
+              "quartile1": 40,
+              "quartile3": 44,
+              "lowest": 39
+            },
+            "2025": {
+              "predicted": 42,
+              "range": "40-44"
+            }
+          },
+          "subjectRequirements": {
+            "core": ["Chinese", "English", "Mathematics", "Liberal Studies"],
+            "elective1": null,
+            "elective2": null,
+            "m1m2": false
+          },
+          "interview": true,
+          "quota": 180,
+          "competitionRatio": 42.1
+        },
+        {
+          "id": "hku-business",
+          "code": "6781",
+          "name": "Bachelor of Business Administration",
+          "nameZh": "工商管理學士",
+          "nameZhCN": "工商管理学士",
+          "faculty": "Faculty of Business and Economics",
+          "facultyZh": "經濟及工商管理學院",
+          "facultyZhCN": "经济及工商管理学院",
+          "duration": "4 years",
+          "credits": 192,
+          "admissionScores": {
+            "2023": {
+              "median": 38,
+              "quartile1": 36,
+              "quartile3": 40,
+              "lowest": 35
+            },
+            "2024": {
+              "median": 39,
+              "quartile1": 37,
+              "quartile3": 41,
+              "lowest": 36
+            },
+            "2025": {
+              "predicted": 39,
+              "range": "37-41"
+            }
+          },
+          "subjectRequirements": {
+            "core": ["Chinese", "English", "Mathematics", "Liberal Studies"],
+            "elective1": null,
+            "elective2": null,
+            "m1m2": false
+          },
+          "interview": false,
+          "quota": 320,
+          "competitionRatio": 28.5
+        }
+      ]
+    },
+    {
+      "id": "cuhk",
+      "name": "The Chinese University of Hong Kong",
+      "nameZh": "中文大學",
+      "nameZhCN": "中文大学",
+      "shortName": "CUHK",
+      "type": "public",
+      "ranking": {
+        "qs": 47,
+        "the": 45,
+        "local": 2
+      },
+      "programs": [
+        {
+          "id": "cuhk-medicine",
+          "code": "6751",
+          "name": "Bachelor of Medicine and Bachelor of Surgery",
+          "nameZh": "內外全科醫學士",
+          "nameZhCN": "内外全科医学士",
+          "faculty": "Faculty of Medicine",
+          "facultyZh": "醫學院",
+          "facultyZhCN": "医学院",
+          "duration": "6 years",
+          "credits": 288,
+          "admissionScores": {
+            "2023": {
+              "median": 43,
+              "quartile1": 42,
+              "quartile3": 44,
+              "lowest": 41
+            },
+            "2024": {
+              "median": 44,
+              "quartile1": 43,
+              "quartile3": 45,
+              "lowest": 42
+            },
+            "2025": {
+              "predicted": 44,
+              "range": "42-45"
+            }
+          },
+          "subjectRequirements": {
+            "core": ["Chinese", "English", "Mathematics", "Liberal Studies"],
+            "elective1": "Chemistry",
+            "elective2": "Biology or Physics",
+            "m1m2": false
+          },
+          "interview": true,
+          "quota": 250,
+          "competitionRatio": 78.3
+        },
+        {
+          "id": "cuhk-journalism",
+          "code": "6901",
+          "name": "Bachelor of Social Science in Journalism and Communication",
+          "nameZh": "社會科學學士（新聞與傳播）",
+          "nameZhCN": "社会科学学士（新闻与传播）",
+          "faculty": "Faculty of Social Science",
+          "facultyZh": "社會科學院",
+          "facultyZhCN": "社会科学院",
+          "duration": "4 years",
+          "credits": 192,
+          "admissionScores": {
+            "2023": {
+              "median": 37,
+              "quartile1": 35,
+              "quartile3": 39,
+              "lowest": 34
+            },
+            "2024": {
+              "median": 38,
+              "quartile1": 36,
+              "quartile3": 40,
+              "lowest": 35
+            },
+            "2025": {
+              "predicted": 38,
+              "range": "36-40"
+            }
+          },
+          "subjectRequirements": {
+            "core": ["Chinese", "English", "Mathematics", "Liberal Studies"],
+            "elective1": null,
+            "elective2": null,
+            "m1m2": false
+          },
+          "interview": true,
+          "quota": 85,
+          "competitionRatio": 52.8
+        },
+        {
+          "id": "cuhk-business",
+          "code": "6741",
+          "name": "Bachelor of Business Administration",
+          "nameZh": "工商管理學士",
+          "nameZhCN": "工商管理学士",
+          "faculty": "Faculty of Business Administration",
+          "facultyZh": "工商管理學院",
+          "facultyZhCN": "工商管理学院",
+          "duration": "4 years",
+          "credits": 192,
+          "admissionScores": {
+            "2023": {
+              "median": 36,
+              "quartile1": 34,
+              "quartile3": 38,
+              "lowest": 33
+            },
+            "2024": {
+              "median": 37,
+              "quartile1": 35,
+              "quartile3": 39,
+              "lowest": 34
+            },
+            "2025": {
+              "predicted": 37,
+              "range": "35-39"
+            }
+          },
+          "subjectRequirements": {
+            "core": ["Chinese", "English", "Mathematics", "Liberal Studies"],
+            "elective1": null,
+            "elective2": null,
+            "m1m2": false
+          },
+          "interview": false,
+          "quota": 280,
+          "competitionRatio": 31.2
+        }
+      ]
+    },
+    {
+      "id": "hkuust",
+      "name": "The Hong Kong University of Science and Technology",
+      "nameZh": "科技大學",
+      "nameZhCN": "科技大学",
+      "shortName": "HKUST",
+      "type": "public",
+      "ranking": {
+        "qs": 60,
+        "the": 58,
+        "local": 3
+      },
+      "programs": [
+        {
+          "id": "hkust-cs",
+          "code": "6911",
+          "name": "Bachelor of Engineering in Computer Science",
+          "nameZh": "工程學士（計算機科學）",
+          "nameZhCN": "工程学士（计算机科学）",
+          "faculty": "School of Engineering",
+          "facultyZh": "工學院",
+          "facultyZhCN": "工学院",
+          "duration": "4 years",
+          "credits": 192,
+          "admissionScores": {
+            "2023": {
+              "median": 39,
+              "quartile1": 37,
+              "quartile3": 41,
+              "lowest": 36
+            },
+            "2024": {
+              "median": 40,
+              "quartile1": 38,
+              "quartile3": 42,
+              "lowest": 37
+            },
+            "2025": {
+              "predicted": 40,
+              "range": "38-42"
+            }
+          },
+          "subjectRequirements": {
+            "core": ["Chinese", "English", "Mathematics", "Liberal Studies"],
+            "elective1": "Physics or Chemistry",
+            "elective2": "Mathematics (Extended Part)",
+            "m1m2": true
+          },
+          "interview": false,
+          "quota": 180,
+          "competitionRatio": 35.6
+        },
+        {
+          "id": "hkust-bba",
+          "code": "6921",
+          "name": "Bachelor of Business Administration",
+          "nameZh": "工商管理學士",
+          "nameZhCN": "工商管理学士",
+          "faculty": "School of Business and Management",
+          "facultyZh": "商學院",
+          "facultyZhCN": "商学院",
+          "duration": "4 years",
+          "credits": 192,
+          "admissionScores": {
+            "2023": {
+              "median": 37,
+              "quartile1": 35,
+              "quartile3": 39,
+              "lowest": 34
+            },
+            "2024": {
+              "median": 38,
+              "quartile1": 36,
+              "quartile3": 40,
+              "lowest": 35
+            },
+            "2025": {
+              "predicted": 38,
+              "range": "36-40"
+            }
+          },
+          "subjectRequirements": {
+            "core": ["Chinese", "English", "Mathematics", "Liberal Studies"],
+            "elective1": null,
+            "elective2": null,
+            "m1m2": false
+          },
+          "interview": false,
+          "quota": 220,
+          "competitionRatio": 29.8
+        }
+      ]
+    },
+    {
+      "id": "cityu",
+      "name": "City University of Hong Kong",
+      "nameZh": "城市大學",
+      "nameZhCN": "城市大学",
+      "shortName": "CityU",
+      "type": "public",
+      "ranking": {
+        "qs": 62,
+        "the": 79,
+        "local": 4
+      },
+      "programs": [
+        {
+          "id": "cityu-law",
+          "code": "6802",
+          "name": "Bachelor of Laws",
+          "nameZh": "法學士",
+          "nameZhCN": "法学士",
+          "faculty": "School of Law",
+          "facultyZh": "法律學院",
+          "facultyZhCN": "法学院",
+          "duration": "4 years",
+          "credits": 192,
+          "admissionScores": {
+            "2023": {
+              "median": 35,
+              "quartile1": 33,
+              "quartile3": 37,
+              "lowest": 32
+            },
+            "2024": {
+              "median": 36,
+              "quartile1": 34,
+              "quartile3": 38,
+              "lowest": 33
+            },
+            "2025": {
+              "predicted": 36,
+              "range": "34-38"
+            }
+          },
+          "subjectRequirements": {
+            "core": ["Chinese", "English", "Mathematics", "Liberal Studies"],
+            "elective1": null,
+            "elective2": null,
+            "m1m2": false
+          },
+          "interview": true,
+          "quota": 160,
+          "competitionRatio": 38.5
+        },
+        {
+          "id": "cityu-cs",
+          "code": "6912",
+          "name": "Bachelor of Science in Computer Science",
+          "nameZh": "理學士（計算機科學）",
+          "nameZhCN": "理学士（计算机科学）",
+          "faculty": "College of Science and Engineering",
+          "facultyZh": "科學及工程學院",
+          "facultyZhCN": "科学及工程学院",
+          "duration": "4 years",
+          "credits": 192,
+          "admissionScores": {
+            "2023": {
+              "median": 34,
+              "quartile1": 32,
+              "quartile3": 36,
+              "lowest": 31
+            },
+            "2024": {
+              "median": 35,
+              "quartile1": 33,
+              "quartile3": 37,
+              "lowest": 32
+            },
+            "2025": {
+              "predicted": 35,
+              "range": "33-37"
+            }
+          },
+          "subjectRequirements": {
+            "core": ["Chinese", "English", "Mathematics", "Liberal Studies"],
+            "elective1": "Physics or Chemistry",
+            "elective2": null,
+            "m1m2": true
+          },
+          "interview": false,
+          "quota": 195,
+          "competitionRatio": 32.1
+        }
+      ]
+    },
+    {
+      "id": "hkbm",
+      "name": "Hong Kong Baptist University",
+      "nameZh": "浸會大學",
+      "nameZhCN": "浸会大学",
+      "shortName": "HKBU",
+      "type": "public",
+      "ranking": {
+        "qs": 295,
+        "the": "401-500",
+        "local": 5
+      },
+      "programs": [
+        {
+          "id": "hkbm-communication",
+          "code": "6903",
+          "name": "Bachelor of Communication - Honours in Communication Studies",
+          "nameZh": "傳理學士（傳播學）",
+          "nameZhCN": "传理学士（传播学）",
+          "faculty": "School of Communication",
+          "facultyZh": "傳理學院",
+          "facultyZhCN": "传理学院",
+          "duration": "4 years",
+          "credits": 192,
+          "admissionScores": {
+            "2023": {
+              "median": 32,
+              "quartile1": 30,
+              "quartile3": 34,
+              "lowest": 29
+            },
+            "2024": {
+              "median": 33,
+              "quartile1": 31,
+              "quartile3": 35,
+              "lowest": 30
+            },
+            "2025": {
+              "predicted": 33,
+              "range": "31-35"
+            }
+          },
+          "subjectRequirements": {
+            "core": ["Chinese", "English", "Mathematics", "Liberal Studies"],
+            "elective1": null,
+            "elective2": null,
+            "m1m2": false
+          },
+          "interview": true,
+          "quota": 120,
+          "competitionRatio": 28.9
+        },
+        {
+          "id": "hkbm-chinese",
+          "code": "6703",
+          "name": "Bachelor of Arts - Honours in Chinese Language and Literature",
+          "nameZh": "文學士（中國語言文學）",
+          "nameZhCN": "文学士（中国语言文学）",
+          "faculty": "Faculty of Arts",
+          "facultyZh": "文學院",
+          "facultyZhCN": "文学院",
+          "duration": "4 years",
+          "credits": 192,
+          "admissionScores": {
+            "2023": {
+              "median": 28,
+              "quartile1": 26,
+              "quartile3": 30,
+              "lowest": 25
+            },
+            "2024": {
+              "median": 29,
+              "quartile1": 27,
+              "quartile3": 31,
+              "lowest": 26
+            },
+            "2025": {
+              "predicted": 29,
+              "range": "27-31"
+            }
+          },
+          "subjectRequirements": {
+            "core": ["Chinese", "English", "Mathematics", "Liberal Studies"],
+            "elective1": null,
+            "elective2": null,
+            "m1m2": false
+          },
+          "interview": false,
+          "quota": 85,
+          "competitionRatio": 18.5
+        }
+      ]
+    },
+    {
+      "id": "polyu",
+      "name": "The Hong Kong Polytechnic University",
+      "nameZh": "理工大學",
+      "nameZhCN": "理工大学",
+      "shortName": "PolyU",
+      "type": "public",
+      "ranking": {
+        "qs": 91,
+        "the": 82,
+        "local": 6
+      },
+      "programs": [
+        {
+          "id": "polyu-design",
+          "code": "6941",
+          "name": "Bachelor of Design (Honours) - Communication Design",
+          "nameZh": "設計學士（榮譽）（傳達設計）",
+          "nameZhCN": "设计学士（荣誉）（传达设计）",
+          "faculty": "School of Design",
+          "facultyZh": "設計學院",
+          "facultyZhCN": "设计学院",
+          "duration": "4 years",
+          "credits": 192,
+          "admissionScores": {
+            "2023": {
+              "median": 31,
+              "quartile1": 29,
+              "quartile3": 33,
+              "lowest": 28
+            },
+            "2024": {
+              "median": 32,
+              "quartile1": 30,
+              "quartile3": 34,
+              "lowest": 29
+            },
+            "2025": {
+              "predicted": 32,
+              "range": "30-34"
+            }
+          },
+          "subjectRequirements": {
+            "core": ["Chinese", "English", "Mathematics", "Liberal Studies"],
+            "elective1": null,
+            "elective2": null,
+            "m1m2": false
+          },
+          "interview": true,
+          "quota": 95,
+          "competitionRatio": 42.3
+        },
+        {
+          "id": "polyu-nursing",
+          "code": "6951",
+          "name": "Bachelor of Science (Honours) in Nursing",
+          "nameZh": "理學士（榮譽）（護理學）",
+          "nameZhCN": "理学士（荣誉）（护理学）",
+          "faculty": "Faculty of Health and Social Sciences",
+          "facultyZh": "健康及社會科學院",
+          "facultyZhCN": "健康及社会科学学院",
+          "duration": "5 years",
+          "credits": 240,
+          "admissionScores": {
+            "2023": {
+              "median": 30,
+              "quartile1": 28,
+              "quartile3": 32,
+              "lowest": 27
+            },
+            "2024": {
+              "median": 31,
+              "quartile1": 29,
+              "quartile3": 33,
+              "lowest": 28
+            },
+            "2025": {
+              "predicted": 31,
+              "range": "29-33"
+            }
+          },
+          "subjectRequirements": {
+            "core": ["Chinese", "English", "Mathematics", "Liberal Studies"],
+            "elective1": "Biology",
+            "elective2": "Chemistry",
+            "m1m2": false
+          },
+          "interview": false,
+          "quota": 280,
+          "competitionRatio": 25.8
+        }
+      ]
+    },
+    {
+      "id": "eduhk",
+      "name": "The Education University of Hong Kong",
+      "nameZh": "教育大學",
+      "nameZhCN": "教育大学",
+      "shortName": "EdUHK",
+      "type": "public",
+      "ranking": {
+        "qs": "301-350",
+        "the": "401-500",
+        "local": 7
+      },
+      "programs": [
+        {
+          "id": "eduhk-education",
+          "code": "6961",
+          "name": "Bachelor of Education (Honours) - Early Childhood Education",
+          "nameZh": "教育學士（榮譽）（幼兒教育）",
+          "nameZhCN": "教育学士（荣誉）（幼儿教育）",
+          "faculty": "Faculty of Education and Human Development",
+          "facultyZh": "教育與人類發展學院",
+          "facultyZhCN": "教育与人类发展学院",
+          "duration": "5 years",
+          "credits": 240,
+          "admissionScores": {
+            "2023": {
+              "median": 26,
+              "quartile1": 24,
+              "quartile3": 28,
+              "lowest": 23
+            },
+            "2024": {
+              "median": 27,
+              "quartile1": 25,
+              "quartile3": 29,
+              "lowest": 24
+            },
+            "2025": {
+              "predicted": 27,
+              "range": "25-29"
+            }
+          },
+          "subjectRequirements": {
+            "core": ["Chinese", "English", "Mathematics", "Liberal Studies"],
+            "elective1": null,
+            "elective2": null,
+            "m1m2": false
+          },
+          "interview": true,
+          "quota": 150,
+          "competitionRatio": 22.4
+        }
+      ]
+    },
+    {
+      "id": "lingu",
+      "name": "Lingnan University",
+      "nameZh": "嶺南大學",
+      "nameZhCN": "岭南大学",
+      "shortName": "LingU",
+      "type": "public",
+      "ranking": {
+        "qs": "601-650",
+        "the": "401-500",
+        "local": 8
+      },
+      "programs": [
+        {
+          "id": "lingu-translation",
+          "code": "6971",
+          "name": "Bachelor of Arts (Honours) - Translation",
+          "nameZh": "文學士（榮譽）（翻譯）",
+          "nameZhCN": "文学士（荣誉）（翻译）",
+          "faculty": "Faculty of Arts",
+          "facultyZh": "文學院",
+          "facultyZhCN": "文学院",
+          "duration": "4 years",
+          "credits": 192,
+          "admissionScores": {
+            "2023": {
+              "median": 27,
+              "quartile1": 25,
+              "quartile3": 29,
+              "lowest": 24
+            },
+            "2024": {
+              "median": 28,
+              "quartile1": 26,
+              "quartile3": 30,
+              "lowest": 25
+            },
+            "2025": {
+              "predicted": 28,
+              "range": "26-30"
+            }
+          },
+          "subjectRequirements": {
+            "core": ["Chinese", "English", "Mathematics", "Liberal Studies"],
+            "elective1": null,
+            "elective2": null,
+            "m1m2": false
+          },
+          "interview": false,
+          "quota": 65,
+          "competitionRatio": 19.8
+        }
+      ]
+    }
+  ],
+  "programCodes": {
+    "6721": "hku-medicine",
+    "6801": "hku-law",
+    "6781": "hku-business",
+    "6751": "cuhk-medicine",
+    "6901": "cuhk-journalism",
+    "6741": "cuhk-business",
+    "6911": "hkust-cs",
+    "6921": "hkust-bba",
+    "6802": "cityu-law",
+    "6912": "cityu-cs",
+    "6903": "hkbm-communication",
+    "6703": "hkbm-chinese",
+    "6941": "polyu-design",
+    "6951": "polyu-nursing",
+    "6961": "eduhk-education",
+    "6971": "lingu-translation"
+  },
+  "faculties": {
+    "medicine": {
+      "name": "Medicine",
+      "nameZh": "醫學",
+      "nameZhCN": "医学",
+      "programs": ["hku-medicine", "cuhk-medicine"]
+    },
+    "law": {
+      "name": "Law",
+      "nameZh": "法律",
+      "nameZhCN": "法律",
+      "programs": ["hku-law", "cityu-law"]
+    },
+    "business": {
+      "name": "Business",
+      "nameZh": "商科",
+      "nameZhCN": "商科",
+      "programs": ["hku-business", "cuhk-business", "hkust-bba"]
+    },
+    "engineering": {
+      "name": "Engineering",
+      "nameZh": "工程",
+      "nameZhCN": "工程",
+      "programs": ["hkust-cs", "cityu-cs"]
+    },
+    "communication": {
+      "name": "Communication",
+      "nameZh": "傳理",
+      "nameZhCN": "传理",
+      "programs": ["cuhk-journalism", "hkbm-communication"]
+    },
+    "arts": {
+      "name": "Arts",
+      "nameZh": "文學",
+      "nameZhCN": "文学",
+      "programs": ["hkbm-chinese", "lingu-translation"]
+    },
+    "design": {
+      "name": "Design",
+      "nameZh": "設計",
+      "nameZhCN": "设计",
+      "programs": ["polyu-design"]
+    },
+    "health": {
+      "name": "Health Sciences",
+      "nameZh": "健康科學",
+      "nameZhCN": "健康科学",
+      "programs": ["polyu-nursing"]
+    },
+    "education": {
+      "name": "Education",
+      "nameZh": "教育",
+      "nameZhCN": "教育",
+      "programs": ["eduhk-education"]
+    }
+  },
+  "scoreBands": {
+    "veryHigh": {
+      "range": "42+",
+      "description": "Top tier programs requiring exceptional DSE performance",
+      "programs": ["hku-medicine", "cuhk-medicine", "hku-law"]
+    },
+    "high": {
+      "range": "38-41",
+      "description": "Competitive programs requiring strong DSE performance",
+      "programs": ["hku-business", "cuhk-journalism", "hkust-cs", "hkust-bba"]
+    },
+    "mediumHigh": {
+      "range": "34-37",
+      "description": "Good programs requiring solid DSE performance",
+      "programs": ["cityu-law", "cityu-cs", "hkbm-communication", "polyu-design"]
+    },
+    "medium": {
+      "range": "30-33",
+      "description": "Moderately competitive programs",
+      "programs": ["polyu-nursing", "lingu-translation"]
+    },
+    "low": {
+      "range": "Below 30",
+      "description": "Less competitive programs",
+      "programs": ["eduhk-education", "hkbm-chinese"]
+    }
+  },
+  "lastUpdated": "2025-01-15T00:00:00.000Z",
+  "version": "1.0.0",
+  "dataSources": [
+    "JUPAS Official Statistics 2023-2024",
+    "University Admissions Offices",
+    "Education Bureau HKDSE Results Analysis"
+  ]
+}

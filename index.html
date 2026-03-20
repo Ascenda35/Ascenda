@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ascenda - 你喺邊？升得更高。</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/leaderboard.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0A0A0F">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+</head>
+<body>
+    <div class="hero-bg"></div>
+    
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button onclick="setLanguage('zh-HK')" class="lang-btn active" data-lang="zh-HK">繁</button>
+        <span>|</span>
+        <button onclick="setLanguage('zh-CN')" class="lang-btn" data-lang="zh-CN">简</button>
+        <span>|</span>
+        <button onclick="setLanguage('en')" class="lang-btn" data-lang="en">EN</button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav-logo">
+            <span class="logo-a">A</span>
+            <span class="logo-text">SCENDA</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="nav-link active" data-i18n="leaderboard">排行榜</a>
+            <a href="profile.html" class="nav-link" data-i18n="uploadScore">上載成績</a>
+            <a href="jupas.html" class="nav-link" data-i18n="dreamMap">夢想版圖</a>
+            <a href="grade.html" class="nav-link" data-i18n="gradeNow">立即批改</a>
+            <button id="authBtn" class="auth-btn" onclick="handleAuth()">登入</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title" data-i18n="appName">Ascenda</h1>
+            <p class="hero-tagline" data-i18n="tagline">你喺邊？升得更高。</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number" id="totalUsers">2,847</span>
+                    <span class="stat-label" data-i18n="yourRank">活躍用戶</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="todayUploads">156</span>
+                    <span class="stat-label">今日上載</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-countdown" id="heroCountdown">
+            <div class="countdown-label" data-i18n="countdown">距離DSE</div>
+            <div class="countdown-time" id="dseCountdown">482天 14小時</div>
+        </div>
+    </section>
+
+    <!-- Leaderboard Tabs -->
+    <section class="leaderboard-section">
+        <div class="container">
+            <div class="board-tabs">
+                <button class="tab-btn active" data-board="general" data-i18n="general">自由榜</button>
+                <button class="tab-btn" data-board="verified" data-i18n="verified">認證榜</button>
+                <button class="tab-btn premium-only" data-board="elite" data-i18n="elite">精英榜</button>
+                <button class="tab-btn" data-board="improvement" data-i18n="improvement">進步榜</button>
+            </div>
+
+            <!-- Board Lock Overlay -->
+            <div class="board-lock" id="boardLock" style="display: none;">
+                <div class="lock-content">
+                    <div class="lock-icon">🔒</div>
+                    <h3 data-i18n="locked">榜單休息中</h3>
+                    <p data-i18n="unlockAt">早上7:00重新開放</p>
+                    <div class="countdown-timer" id="lockCountdown">4小時26分鐘</div>
+                </div>
+            </div>
+
+            <!-- Leaderboard Content -->
+            <div class="leaderboard-content" id="leaderboardContent">
+                <div class="leaderboard-header">
+                    <div class="rank-header">#</div>
+                    <div class="user-header">用戶</div>
+                    <div class="score-header">總分</div>
+                    <div class="school-header">學校</div>
+                    <div class="trend-header">趨勢</div>
+                </div>
+                <div class="leaderboard-list" id="leaderboardList">
+                    <!-- Dynamically populated -->
+                </div>
+            </div>
+
+            <!-- Premium Upgrade CTA -->
+            <div class="premium-cta" id="premiumCta" style="display: none;">
+                <div class="cta-content">
+                    <h3 data-i18n="upgradePremium">升級Premium</h3>
+                    <p>查看完整榜單、學校排名、成績趨勢</p>
+                    <div class="pricing-options">
+                        <button class="price-btn" onclick="startCheckout('monthly')">
+                            <span class="price-period" data-i18n="monthly">月費計劃 HK$28</span>
+                        </button>
+                        <button class="price-btn featured" onclick="startCheckout('yearly')">
+                            <span class="price-period" data-i18n="yearly">年費計劃 HK$198</span>
+                            <span class="price-save">節省33%</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- User Rank Card -->
+    <section class="user-rank-section" id="userRankSection" style="display: none;">
+        <div class="container">
+            <div class="user-rank-card">
+                <div class="rank-number" id="userRankNumber">--</div>
+                <div class="rank-details">
+                    <h3 data-i18n="yourRank">你的排名</h3>
+                    <div class="rank-stats">
+                        <div class="rank-stat">
+                            <span class="stat-label">總分</span>
+                            <span class="stat-value" id="userTotalScore">--</span>
+                        </div>
+                        <div class="rank-stat">
+                            <span class="stat-label">距離目標</span>
+                            <span class="stat-value" id="userTargetGap">--</span>
+                        </div>
+                        <div class="rank-stat">
+                            <span class="stat-label">連續天數</span>
+                            <span class="stat-value" id="userStreak">--</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-a">A</span>
+                    <span class="logo-text">SCENDA</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#" onclick="showPrivacy()">私隱政策</a>
+                    <a href="#" onclick="showTerms()">使用條款</a>
+                    <a href="#" onclick="showContact()">聯絡我們</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#">Instagram</a>
+                    <a href="#">YouTube</a>
+                    <a href="#">Discord</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ascenda. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+        <p>載入中...</p>
+    </div>
+
+    <!-- Success Toast -->
+    <div class="toast success" id="successToast">
+        <div class="toast-content">
+            <span class="toast-icon">✓</span>
+            <span class="toast-message" id="successMessage">操作成功</span>
+        </div>
+    </div>
+
+    <!-- Error Toast -->
+    <div class="toast error" id="errorToast">
+        <div class="toast-content">
+            <span class="toast-icon">✕</span>
+            <span class="toast-message" id="errorMessage">操作失敗</span>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="js/supabase.js"></script>
+    <script type="module" src="js/leaderboard.js"></script>
+    <script type="module" src="js/i18n.js"></script>
+    <script type="module" src="js/payment.js"></script>
+    <script type="module" src="js/notifications.js"></script>
+</body>
+</html>

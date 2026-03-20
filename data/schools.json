@@ -1,0 +1,571 @@
+{
+  "schools": [
+    {
+      "id": "dgs",
+      "name": "Diocesan Girls' School",
+      "nameZh": "拔萃女書院",
+      "nameZhCN": "拔萃女书院",
+      "type": "girls",
+      "district": "kowloon",
+      "domain": "dgs.edu.hk",
+      "level": "secondary",
+      "banding": "band1",
+      "dseAvg": "28.5",
+      "jupasStats": {
+        "2023": {
+          "totalOffers": 145,
+          "top3Offers": 89,
+          "topOffers": 67
+        },
+        "2024": {
+          "totalOffers": 152,
+          "top3Offers": 94,
+          "topOffers": 71
+        }
+      }
+    },
+    {
+      "id": "db",
+      "name": "Diocesan Boys' School",
+      "nameZh": "拔萃男書院",
+      "nameZhCN": "拔萃男书院",
+      "type": "boys",
+      "district": "kowloon",
+      "domain": "dbs.edu.hk",
+      "level": "secondary",
+      "banding": "band1",
+      "dseAvg": "27.8",
+      "jupasStats": {
+        "2023": {
+          "totalOffers": 168,
+          "top3Offers": 102,
+          "topOffers": 78
+        },
+        "2024": {
+          "totalOffers": 175,
+          "top3Offers": 108,
+          "topOffers": 82
+        }
+      }
+    },
+    {
+      "id": "stpauls",
+      "name": "St. Paul's Co-educational College",
+      "nameZh": "聖保羅男女中學",
+      "nameZhCN": "圣保罗男女中学",
+      "type": "co-ed",
+      "district": "hongkong",
+      "domain": "spcc.edu.hk",
+      "level": "secondary",
+      "banding": "band1",
+      "dseAvg": "29.2",
+      "jupasStats": {
+        "2023": {
+          "totalOffers": 142,
+          "top3Offers": 91,
+          "topOffers": 69
+        },
+        "2024": {
+          "totalOffers": 148,
+          "top3Offers": 95,
+          "topOffers": 73
+        }
+      }
+    },
+    {
+      "id": "stpaulsg",
+      "name": "St. Paul's Girls' College",
+      "nameZh": "聖保羅女書院",
+      "nameZhCN": "圣保罗女书院",
+      "type": "girls",
+      "district": "hongkong",
+      "domain": "spgc.edu.hk",
+      "level": "secondary",
+      "banding": "band1",
+      "dseAvg": "28.1",
+      "jupasStats": {
+        "2023": {
+          "totalOffers": 156,
+          "top3Offers": 87,
+          "topOffers": 65
+        },
+        "2024": {
+          "totalOffers": 163,
+          "top3Offers": 92,
+          "topOffers": 68
+        }
+      }
+    },
+    {
+      "id": "kcc",
+      "name": "King's College",
+      "nameZh": "皇仁書院",
+      "nameZhCN": "皇仁书院",
+      "type": "boys",
+      "district": "hongkong",
+      "domain": "kcc.edu.hk",
+      "level": "secondary",
+      "banding": "band1",
+      "dseAvg": "27.5",
+      "jupasStats": {
+        "2023": {
+          "totalOffers": 182,
+          "top3Offers": 105,
+          "topOffers": 81
+        },
+        "2024": {
+          "totalOffers": 189,
+          "top3Offers": 112,
+          "topOffers": 85
+        }
+      }
+    },
+    {
+      "id": "qes",
+      "name": "Queen Elizabeth School",
+      "nameZh": "伊利沙伯中學",
+      "nameZhCN": "伊利沙伯中学",
+      "type": "co-ed",
+      "district": "kowloon",
+      "domain": "qes.edu.hk",
+      "level": "secondary",
+      "banding": "band1",
+      "dseAvg": "26.8",
+      "jupasStats": {
+        "2023": {
+          "totalOffers": 178,
+          "top3Offers": 98,
+          "topOffers": 72
+        },
+        "2024": {
+          "totalOffers": 185,
+          "top3Offers": 103,
+          "topOffers": 76
+        }
+      }
+    },
+    {
+      "id": "wyc",
+      "name": "Wa Ying College",
+      "nameZh": "華英中學",
+      "nameZhCN": "华英中学",
+      "type": "co-ed",
+      "district": "kowloon",
+      "domain": "wyc.edu.hk",
+      "level": "secondary",
+      "banding": "band1",
+      "dseAvg": "25.9",
+      "jupasStats": {
+        "2023": {
+          "totalOffers": 165,
+          "top3Offers": 85,
+          "topOffers": 61
+        },
+        "2024": {
+          "totalOffers": 172,
+          "top3Offers": 90,
+          "topOffers": 65
+        }
+      }
+    },
+    {
+      "id": "stjoseph",
+      "name": "St. Joseph's College",
+      "nameZh": "聖若瑟書院",
+      "nameZhCN": "圣若瑟书院",
+      "type": "boys",
+      "district": "hongkong",
+      "domain": "sjc.edu.hk",
+      "level": "secondary",
+      "banding": "band1",
+      "dseAvg": "26.3",
+      "jupasStats": {
+        "2023": {
+          "totalOffers": 171,
+          "top3Offers": 92,
+          "topOffers": 68
+        },
+        "2024": {
+          "totalOffers": 178,
+          "top3Offers": 97,
+          "topOffers": 72
+        }
+      }
+    },
+    {
+      "id": "la salle",
+      "name": "La Salle College",
+      "nameZh": "喇沙書院",
+      "nameZhCN": "喇沙书院",
+      "type": "boys",
+      "district": "kowloon",
+      "domain": "lsc.edu.hk",
+      "level": "secondary",
+      "banding": "band1",
+      "dseAvg": "26.1",
+      "jupasStats": {
+        "2023": {
+          "totalOffers": 188,
+          "top3Offers": 99,
+          "topOffers": 74
+        },
+        "2024": {
+          "totalOffers": 195,
+          "top3Offers": 104,
+          "topOffers": 78
+        }
+      }
+    },
+    {
+      "id": "mcss",
+      "name": "Maryknoll Convent School (Secondary Section)",
+      "nameZh": "瑪利諾修院學校（中學部）",
+      "nameZhCN": "玛利诺修院学校（中学部）",
+      "type": "girls",
+      "district": "kowloon",
+      "domain": "mcs.edu.hk",
+      "level": "secondary",
+      "banding": "band1",
+      "dseAvg": "27.2",
+      "jupasStats": {
+        "2023": {
+          "totalOffers": 148,
+          "top3Offers": 88,
+          "topOffers": 66
+        },
+        "2024": {
+          "totalOffers": 155,
+          "top3Offers": 93,
+          "topOffers": 70
+        }
+      }
+    },
+    {
+      "id": "sgss",
+      "name": "Shatin Government Secondary School",
+      "nameZh": "沙田官立中學",
+      "nameZhCN": "沙田官立中学",
+      "type": "co-ed",
+      "district": "sha tin",
+      "domain": "sgss.edu.hk",
+      "level": "secondary",
+      "banding": "band1",
+      "dseAvg": "25.4",
+      "jupasStats": {
+        "2023": {
+          "totalOffers": 162,
+          "top3Offers": 82,
+          "topOffers": 58
+        },
+        "2024": {
+          "totalOffers": 169,
+          "top3Offers": 87,
+          "topOffers": 62
+        }
+      }
+    },
+    {
+      "id": "hkcuss",
+      "name": "HKCWC Fung Yiu King Memorial Secondary School",
+      "nameZh": "香港中國婦女會馮堯敬紀念中學",
+      "nameZhCN": "香港中国妇女会冯尧敬纪念中学",
+      "type": "co-ed",
+      "district": "hongkong",
+      "domain": "fyk.edu.hk",
+      "level": "secondary",
+      "banding": "band2",
+      "dseAvg": "23.7",
+      "jupasStats": {
+        "2023": {
+          "totalOffers": 145,
+          "top3Offers": 65,
+          "topOffers": 42
+        },
+        "2024": {
+          "totalOffers": 152,
+          "top3Offers": 70,
+          "topOffers": 46
+        }
+      }
+    },
+    {
+      "id": "stmary",
+      "name": "St. Mary's Canossian College",
+      "nameZh": "嘉諾撒聖瑪利書院",
+      "nameZhCN": "嘉诺撒圣玛利书院",
+      "type": "girls",
+      "district": "kowloon",
+      "domain": "smcc.edu.hk",
+      "level": "secondary",
+      "banding": "band1",
+      "dseAvg": "26.7",
+      "jupasStats": {
+        "2023": {
+          "totalOffers": 158,
+          "top3Offers": 86,
+          "topOffers": 63
+        },
+        "2024": {
+          "totalOffers": 165,
+          "top3Offers": 91,
+          "topOffers": 67
+        }
+      }
+    },
+    {
+      "id": "hktac",
+      "name": "HKTA Tang Hin Memorial Secondary School",
+      "nameZh": "香港道教聯合會鄧顯紀念中學",
+      "nameZhCN": "香港道教联合会邓显纪念中学",
+      "type": "co-ed",
+      "district": "yuen long",
+      "domain": "thm.edu.hk",
+      "level": "secondary",
+      "banding": "band2",
+      "dseAvg": "22.9",
+      "jupasStats": {
+        "2023": {
+          "totalOffers": 138,
+          "top3Offers": 58,
+          "topOffers": 35
+        },
+        "2024": {
+          "totalOffers": 145,
+          "top3Offers": 63,
+          "topOffers": 39
+        }
+      }
+    },
+    {
+      "id": "carmel",
+      "name": "Carmel Pak U Secondary School",
+      "nameZh": "迦密柏雨中學",
+      "nameZhCN": "迦密柏雨中学",
+      "type": "co-ed",
+      "district": "sha tin",
+      "domain": "cpu.edu.hk",
+      "level": "secondary",
+      "banding": "band1",
+      "dseAvg": "25.1",
+      "jupasStats": {
+        "2023": {
+          "totalOffers": 155,
+          "top3Offers": 78,
+          "topOffers": 54
+        },
+        "2024": {
+          "totalOffers": 162,
+          "top3Offers": 83,
+          "topOffers": 58
+        }
+      }
+    },
+    {
+      "id": "pui",
+      "name": "Pui Kiu Middle School",
+      "nameZh": "培僑中學",
+      "nameZhCN": "培侨中学",
+      "type": "co-ed",
+      "district": "hongkong",
+      "domain": "pkms.edu.hk",
+      "level": "secondary",
+      "banding": "band2",
+      "dseAvg": "24.3",
+      "jupasStats": {
+        "2023": {
+          "totalOffers": 142,
+          "top3Offers": 68,
+          "topOffers": 45
+        },
+        "2024": {
+          "totalOffers": 149,
+          "top3Offers": 73,
+          "topOffers": 49
+        }
+      }
+    },
+    {
+      "id": "sacred",
+      "name": "Sacred Heart Canossian College",
+      "nameZh": "嘉諾撒聖心書院",
+      "nameZhCN": "嘉诺撒圣心书院",
+      "type": "girls",
+      "district": "kowloon",
+      "domain": "shcc.edu.hk",
+      "level": "secondary",
+      "banding": "band1",
+      "dseAvg": "26.5",
+      "jupasStats": {
+        "2023": {
+          "totalOffers": 161,
+          "top3Offers": 89,
+          "topOffers": 66
+        },
+        "2024": {
+          "totalOffers": 168,
+          "top3Offers": 94,
+          "topOffers": 70
+        }
+      }
+    },
+    {
+      "id": "strose",
+      "name": "St. Rose of Lima's College",
+      "nameZh": "聖羅撒書院",
+      "nameZhCN": "圣罗撒书院",
+      "type": "girls",
+      "district": "hongkong",
+      "domain": "srl.edu.hk",
+      "level": "secondary",
+      "banding": "band2",
+      "dseAvg": "23.8",
+      "jupasStats": {
+        "2023": {
+          "totalOffers": 148,
+          "top3Offers": 67,
+          "topOffers": 44
+        },
+        "2024": {
+          "totalOffers": 155,
+          "top3Offers": 72,
+          "topOffers": 48
+        }
+      }
+    },
+    {
+      "id": "holy",
+      "name": "Holy Family Canossian College",
+      "nameZh": "嘉諾撒聖家族中學",
+      "nameZhCN": "嘉诺撒圣家族中学",
+      "type": "co-ed",
+      "district": "kwun tong",
+      "domain": "hfcc.edu.hk",
+      "level": "secondary",
+      "banding": "band2",
+      "dseAvg": "22.5",
+      "jupasStats": {
+        "2023": {
+          "totalOffers": 135,
+          "top3Offers": 55,
+          "topOffers": 32
+        },
+        "2024": {
+          "totalOffers": 142,
+          "top3Offers": 60,
+          "topOffers": 36
+        }
+      }
+    },
+    {
+      "id": "buddhist",
+      "name": "Buddhist Wong Wan Tin College",
+      "nameZh": "佛教黃允畋中學",
+      "nameZhCN": "佛教黄允畋中学",
+      "type": "co-ed",
+      "district": "sha tin",
+      "domain": "bwwt.edu.hk",
+      "level": "secondary",
+      "banding": "band2",
+      "dseAvg": "23.1",
+      "jupasStats": {
+        "2023": {
+          "totalOffers": 139,
+          "top3Offers": 61,
+          "topOffers": 38
+        },
+        "2024": {
+          "totalOffers": 146,
+          "top3Offers": 66,
+          "topOffers": 42
+        }
+      }
+    }
+  ],
+  "domains": {
+    "dgs.edu.hk": "dgs",
+    "dbs.edu.hk": "db",
+    "spcc.edu.hk": "stpauls",
+    "spgc.edu.hk": "stpaulsg",
+    "kcc.edu.hk": "kcc",
+    "qes.edu.hk": "qes",
+    "wyc.edu.hk": "wyc",
+    "sjc.edu.hk": "stjoseph",
+    "lsc.edu.hk": "la salle",
+    "mcs.edu.hk": "mcss",
+    "sgss.edu.hk": "sgss",
+    "fyk.edu.hk": "hkcuss",
+    "smcc.edu.hk": "stmary",
+    "thm.edu.hk": "hktac",
+    "cpu.edu.hk": "carmel",
+    "pkms.edu.hk": "pui",
+    "shcc.edu.hk": "sacred",
+    "srl.edu.hk": "strose",
+    "hfcc.edu.hk": "holy",
+    "bwwt.edu.hk": "buddhist"
+  },
+  "districts": {
+    "hongkong": {
+      "name": "Hong Kong Island",
+      "nameZh": "香港島",
+      "nameZhCN": "香港岛",
+      "schools": ["stpauls", "stpaulsg", "kcc", "stjoseph", "hkcuss", "pui", "strose"]
+    },
+    "kowloon": {
+      "name": "Kowloon",
+      "nameZh": "九龍",
+      "nameZhCN": "九龙",
+      "schools": ["dgs", "db", "qes", "wyc", "la salle", "mcss", "stmary", "sacred", "holy"]
+    },
+    "sha tin": {
+      "name": "Sha Tin",
+      "nameZh": "沙田",
+      "nameZhCN": "沙田",
+      "schools": ["sgss", "carmel", "buddhist"]
+    },
+    "yuen long": {
+      "name": "Yuen Long",
+      "nameZh": "元朗",
+      "nameZhCN": "元朗",
+      "schools": ["hktac"]
+    },
+    "kwun tong": {
+      "name": "Kwun Tong",
+      "nameZh": "觀塘",
+      "nameZhCN": "观塘",
+      "schools": ["holy"]
+    }
+  },
+  "types": {
+    "boys": {
+      "name": "Boys' School",
+      "nameZh": "男校",
+      "nameZhCN": "男校"
+    },
+    "girls": {
+      "name": "Girls' School",
+      "nameZh": "女校",
+      "nameZhCN": "女校"
+    },
+    "co-ed": {
+      "name": "Co-educational",
+      "nameZh": "男女校",
+      "nameZhCN": "男女校"
+    }
+  },
+  "bandings": {
+    "band1": {
+      "name": "Band 1",
+      "nameZh": "第一組別",
+      "nameZhCN": "第一组别",
+      "description": "Top academic performance band"
+    },
+    "band2": {
+      "name": "Band 2",
+      "nameZh": "第二組別",
+      "nameZhCN": "第二组别",
+      "description": "Second academic performance band"
+    }
+  },
+  "lastUpdated": "2025-01-15T00:00:00.000Z",
+  "version": "1.0.0"
+}

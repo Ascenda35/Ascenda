@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>學校驗證 - Ascenda</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0A0A0F">
+</head>
+<body>
+    <div class="hero-bg"></div>
+    
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button onclick="setLanguage('zh-HK')" class="lang-btn active" data-lang="zh-HK">繁</button>
+        <span>|</span>
+        <button onclick="setLanguage('zh-CN')" class="lang-btn" data-lang="zh-CN">简</button>
+        <span>|</span>
+        <button onclick="setLanguage('en')" class="lang-btn" data-lang="en">EN</button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav-logo">
+            <span class="logo-a">A</span>
+            <span class="logo-text">SCENDA</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="nav-link" data-i18n="leaderboard">排行榜</a>
+            <a href="profile.html" class="nav-link" data-i18n="uploadScore">上載成績</a>
+            <a href="jupas.html" class="nav-link" data-i18n="dreamMap">夢想版圖</a>
+            <a href="grade.html" class="nav-link" data-i18n="gradeNow">立即批改</a>
+            <button id="authBtn" class="auth-btn" onclick="handleAuth()">登入</button>
+        </div>
+    </nav>
+
+    <!-- Registration Container -->
+    <section class="auth-section">
+        <div class="container">
+            <div class="auth-card">
+                <div class="auth-header">
+                    <h2 data-i18n="verifySchool">驗證學校電郵</h2>
+                    <p>驗證後可進入認證榜，獲得更準確排名</p>
+                </div>
+
+                <!-- Step 1: School Selection -->
+                <div class="step-container" id="step1">
+                    <div class="step-indicator">
+                        <div class="step active">1</div>
+                        <div class="step-line"></div>
+                        <div class="step">2</div>
+                        <div class="step-line"></div>
+                        <div class="step">3</div>
+                    </div>
+                    
+                    <div class="step-content">
+                        <h3 data-i18n="selectSchool">選擇你的學校</h3>
+                        <div class="school-search">
+                            <input type="text" id="schoolSearch" placeholder="搜尋學校名稱..." data-i18n-placeholder="selectSchool">
+                            <div class="search-icon">🔍</div>
+                        </div>
+                        <div class="school-list" id="schoolList">
+                            <!-- Dynamically populated -->
+                        </div>
+                        <div class="school-not-found" id="schoolNotFound" style="display: none;">
+                            <p data-i18n="domainNotSupported">暫未支援此學校，請提交電郵樣本</p>
+                            <button class="submit-school-btn" onclick="submitSchoolRequest()">提交學校資料</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Email Input -->
+                <div class="step-container" id="step2" style="display: none;">
+                    <div class="step-indicator">
+                        <div class="step completed">✓</div>
+                        <div class="step-line active"></div>
+                        <div class="step active">2</div>
+                        <div class="step-line"></div>
+                        <div class="step">3</div>
+                    </div>
+                    
+                    <div class="step-content">
+                        <h3 data-i18n="enterSchoolEmail">輸入學校電郵</h3>
+                        <div class="selected-school" id="selectedSchool">
+                            <!-- Show selected school info -->
+                        </div>
+                        <div class="email-input">
+                            <input type="email" id="schoolEmail" placeholder="your.name@school.edu.hk" data-i18n-placeholder="enterSchoolEmail">
+                            <div class="email-icon">📧</div>
+                        </div>
+                        <div class="email-validation" id="emailValidation">
+                            <!-- Validation messages -->
+                        </div>
+                        <button class="primary-btn" onclick="sendOTP()" id="sendOTPBtn">發送驗證碼</button>
+                    </div>
+                </div>
+
+                <!-- Step 3: OTP Verification -->
+                <div class="step-container" id="step3" style="display: none;">
+                    <div class="step-indicator">
+                        <div class="step completed">✓</div>
+                        <div class="step-line completed"></div>
+                        <div class="step completed">✓</div>
+                        <div class="step-line active"></div>
+                        <div class="step active">3</div>
+                    </div>
+                    
+                    <div class="step-content">
+                        <h3 data-i18n="enterOTP">輸入驗證碼</h3>
+                        <div class="otp-info">
+                            <p data-i18n="otpSent">驗證碼已發送至你的學校電郵</p>
+                            <p class="otp-email" id="otpEmail">your.name@school.edu.hk</p>
+                        </div>
+                        <div class="otp-input-container">
+                            <input type="text" maxlength="1" class="otp-input" id="otp1">
+                            <input type="text" maxlength="1" class="otp-input" id="otp2">
+                            <input type="text" maxlength="1" class="otp-input" id="otp3">
+                            <input type="text" maxlength="1" class="otp-input" id="otp4">
+                            <input type="text" maxlength="1" class="otp-input" id="otp5">
+                            <input type="text" maxlength="1" class="otp-input" id="otp6">
+                        </div>
+                        <div class="otp-actions">
+                            <button class="secondary-btn" onclick="resendOTP()" id="resendOTPBtn">重新發送</button>
+                            <button class="primary-btn" onclick="verifyOTP()" id="verifyOTPBtn">驗證</button>
+                        </div>
+                        <div class="otp-countdown" id="otpCountdown">
+                            可於 <span id="countdownTime">60</span> 秒後重新發送
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Success State -->
+                <div class="success-container" id="successContainer" style="display: none;">
+                    <div class="success-animation">
+                        <div class="success-icon">✓</div>
+                    </div>
+                    <h3 data-i18n="verifySuccess">學校驗證成功！</h3>
+                    <p>你現在可以進入認證榜，與同校同學比較排名</p>
+                    <button class="primary-btn" onclick="goToProfile()">前往個人資料</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- School Request Modal -->
+    <div class="modal" id="schoolRequestModal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>提交學校資料</h3>
+                <button class="modal-close" onclick="closeSchoolRequest()">✕</button>
+            </div>
+            <div class="modal-body">
+                <p>請提供你的學校資料，我們會盡快添加支援</p>
+                <div class="form-group">
+                    <label>學校名稱</label>
+                    <input type="text" id="requestSchoolName" placeholder="中英文學校名稱">
+                </div>
+                <div class="form-group">
+                    <label>學校電郵域名</label>
+                    <input type="text" id="requestSchoolDomain" placeholder="例如: school.edu.hk">
+                </div>
+                <div class="form-group">
+                    <label>地區</label>
+                    <select id="requestSchoolDistrict">
+                        <option value="港島">港島</option>
+                        <option value="九龍">九龍</option>
+                        <option value="新界">新界</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>你的電郵 (用於通知)</label>
+                    <input type="email" id="requestContactEmail" placeholder="your.email@example.com">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="secondary-btn" onclick="closeSchoolRequest()">取消</button>
+                <button class="primary-btn" onclick="submitSchoolRequestForm()">提交</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+        <p>處理中...</p>
+    </div>
+
+    <!-- Success Toast -->
+    <div class="toast success" id="successToast">
+        <div class="toast-content">
+            <span class="toast-icon">✓</span>
+            <span class="toast-message" id="successMessage">操作成功</span>
+        </div>
+    </div>
+
+    <!-- Error Toast -->
+    <div class="toast error" id="errorToast">
+        <div class="toast-content">
+            <span class="toast-icon">✕</span>
+            <span class="toast-message" id="errorMessage">操作失敗</span>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="js/supabase.js"></script>
+    <script type="module" src="js/verification.js"></script>
+    <script type="module" src="js/i18n.js"></script>
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>夢想版圖 - Ascenda</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0A0A0F">
+</head>
+<body>
+    <div class="hero-bg"></div>
+    
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button onclick="setLanguage('zh-HK')" class="lang-btn active" data-lang="zh-HK">繁</button>
+        <span>|</span>
+        <button onclick="setLanguage('zh-CN')" class="lang-btn" data-lang="zh-CN">简</button>
+        <span>|</span>
+        <button onclick="setLanguage('en')" class="lang-btn" data-lang="en">EN</button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav-logo">
+            <span class="logo-a">A</span>
+            <span class="logo-text">SCENDA</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="nav-link" data-i18n="leaderboard">排行榜</a>
+            <a href="profile.html" class="nav-link" data-i18n="uploadScore">上載成績</a>
+            <a href="jupas.html" class="nav-link active" data-i18n="dreamMap">夢想版圖</a>
+            <a href="grade.html" class="nav-link" data-i18n="gradeNow">立即批改</a>
+            <button id="authBtn" class="auth-btn" onclick="handleAuth()">登入</button>
+        </div>
+    </nav>
+
+    <!-- JUPAS Dream Map Section -->
+    <section class="dream-map-section">
+        <div class="container">
+            <div class="dream-map-header">
+                <h1 data-i18n="dreamMap">夢想版圖</h1>
+                <p>基於你的實際成績，預測 JUPAS 大學入學機會</p>
+                <div class="countdown-to-jupas">
+                    <div class="countdown-label">距離 JUPAS 放榜</div>
+                    <div class="countdown-time" id="jupasCountdown">2026年7月16日 09:00</div>
+                </div>
+            </div>
+
+            <!-- User Score Summary -->
+            <div class="score-summary-card">
+                <div class="score-display">
+                    <div class="current-score">
+                        <span class="score-label">你的總分</span>
+                        <span class="score-value" id="userTotalScore">--</span>
+                    </div>
+                    <div class="score-breakdown">
+                        <div class="subject-score">
+                            <span class="subject-name">中文</span>
+                            <span class="subject-grade" id="chineseGrade">--</span>
+                        </div>
+                        <div class="subject-score">
+                            <span class="subject-name">英文</span>
+                            <span class="subject-grade" id="englishGrade">--</span>
+                        </div>
+                        <div class="subject-score">
+                            <span class="subject-name">數學</span>
+                            <span class="subject-grade" id="mathGrade">--</span>
+                        </div>
+                        <div class="subject-score">
+                            <span class="subject-name">最佳選修</span>
+                            <span class="subject-grade" id="bestElectiveGrade">--</span>
+                        </div>
+                        <div class="subject-score">
+                            <span class="subject-name">次佳選修</span>
+                            <span class="subject-grade" id="secondElectiveGrade">--</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="prediction-info">
+                    <div class="prediction-item">
+                        <span class="prediction-label">預測進步速度</span>
+                        <span class="prediction-value" id="improvementRate">--</span>
+                    </div>
+                    <div class="prediction-item">
+                        <span class="prediction-label">預計達標時間</span>
+                        <span class="prediction-value" id="targetTime">--</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- University Filter -->
+            <div class="university-filter">
+                <div class="filter-tabs">
+                    <button class="filter-btn active" data-university="all" onclick="filterUniversity('all')">全部大學</button>
+                    <button class="filter-btn" data-university="hku" onclick="filterUniversity('hku')">港大</button>
+                    <button class="filter-btn" data-university="cuhk" onclick="filterUniversity('cuhk')">中大</button>
+                    <button class="filter-btn" data-university="ust" onclick="filterUniversity('ust')">科大</button>
+                    <button class="filter-btn" data-university="cityu" onclick="filterUniversity('cityu')">城大</button>
+                    <button class="filter-btn" data-university="polyu" onclick="filterUniversity('polyu')">理大</button>
+                    <button class="filter-btn" data-university="edu" onclick="filterUniversity('edu')">教大</button>
+                    <button class="filter-btn" data-university="other" onclick="filterUniversity('other')">其他</button>
+                </div>
+                <div class="search-box">
+                    <input type="text" id="programSearch" placeholder="搜尋課程名稱或代碼...">
+                    <div class="search-icon">🔍</div>
+                </div>
+            </div>
+
+            <!-- Dream Map Grid -->
+            <div class="dream-map-grid" id="dreamMapGrid">
+                <!-- Dynamically populated with university programmes -->
+            </div>
+
+            <!-- Legend -->
+            <div class="map-legend">
+                <div class="legend-item">
+                    <div class="legend-color green"></div>
+                    <span>已踩線 ✅</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color yellow"></div>
+                    <span>接近 🟡</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color red"></div>
+                    <span>目標 🎯</span>
+                </div>
+            </div>
+
+            <!-- Premium Upgrade CTA -->
+            <div class="premium-cta" id="premiumCta" style="display: none;">
+                <div class="cta-content">
+                    <h3 data-i18n="upgradePremium">升級Premium解鎖完整預測</h3>
+                    <p>獲得詳細的入學機會分析、競爭者比較和個人化建議</p>
+                    <button class="premium-btn" onclick="showPremium()">
+                        <span class="premium-icon">⭐</span>
+                        <span data-i18n="upgradePremium">升級Premium</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programme Detail Modal -->
+    <div class="modal" id="programmeModal" style="display: none;">
+        <div class="modal-content programme-modal">
+            <div class="modal-header">
+                <h3 id="programmeTitle">課程詳情</h3>
+                <button class="modal-close" onclick="closeProgrammeModal()">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="programme-info">
+                    <div class="programme-basic">
+                        <div class="programme-code" id="programmeCode">JS0000</div>
+                        <div class="programme-university" id="programmeUniversity">大學名稱</div>
+                        <div class="programme-faculty" id="programmeFaculty">學院</div>
+                    </div>
+                    <div class="programme-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">2025 入學分數</span>
+                            <span class="stat-value" id="programmeLq">--</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">你的分數</span>
+                            <span class="stat-value" id="programmeUserScore">--</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">相差分數</span>
+                            <span class="stat-value" id="programmeGap">--</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">入學機會</span>
+                            <span class="stat-value" id="programmeChance">--</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="programme-analysis">
+                    <h4>入學分析</h4>
+                    <div class="analysis-content" id="programmeAnalysis">
+                        <!-- Detailed analysis content -->
+                    </div>
+                </div>
+                <div class="programme-recommendations">
+                    <h4>改進建議</h4>
+                    <div class="recommendations-list" id="programmeRecommendations">
+                        <!-- Personalized recommendations -->
+                    </div>
+                </div>
+                <div class="programme-actions">
+                    <button class="primary-btn" onclick="setTargetProgramme()">設為目標</button>
+                    <button class="secondary-btn" onclick="shareProgramme()">分享</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+        <p>載入中...</p>
+    </div>
+
+    <!-- Success Toast -->
+    <div class="toast success" id="successToast">
+        <div class="toast-content">
+            <span class="toast-icon">✓</span>
+            <span class="toast-message" id="successMessage">操作成功</span>
+        </div>
+    </div>
+
+    <!-- Error Toast -->
+    <div class="toast error" id="errorToast">
+        <div class="toast-content">
+            <span class="toast-icon">✕</span>
+            <span class="toast-message" id="errorMessage">操作失敗</span>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="js/supabase.js"></script>
+    <script type="module" src="js/jupas.js"></script>
+    <script type="module" src="js/payment.js"></script>
+    <script type="module" src="js/i18n.js"></script>
+</body>
+</html>
