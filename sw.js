@@ -12,21 +12,21 @@ const STATIC_ASSETS = [
   '/jupas.html',
   '/grade.html',
   '/manifest.json',
-  '/css/style.css',
-  '/css/leaderboard.css',
-  '/css/animations.css',
-  '/js/supabase.js',
-  '/js/leaderboard.js',
-  '/js/jupas.js',
-  '/js/grading.js',
-  '/js/anticheat.js',
-  '/js/watermark.js',
-  '/js/notifications.js',
-  '/js/payment.js',
-  '/js/verification.js',
-  '/js/i18n.js',
-  '/data/schools.json',
-  '/data/jupas-data.json'
+  'css/style.css',
+  'css/leaderboard.css',
+  'css/animations.css',
+  'js/supabase.js',
+  'js/leaderboard.js',
+  'js/jupas.js',
+  'js/grading.js',
+  'js/anticheat.js',
+  'js/watermark.js',
+  'js/notifications.js',
+  'js/payment.js',
+  'js/verification.js',
+  'js/i18n.js',
+  'data/schools.json',
+  'data/jupas-data.json'
 ];
 
 // API endpoints to cache with specific strategies
@@ -117,9 +117,9 @@ function isAPIRequest(request) {
 function isStaticAsset(request) {
   const url = new URL(request.url);
   return request.url.includes(self.location.origin) && 
-         (url.pathname.includes('/css/') || 
-          url.pathname.includes('/js/') || 
-          url.pathname.includes('/data/') ||
+         (url.pathname.includes('css/') || 
+          url.pathname.includes('js/') || 
+          url.pathname.includes('data/') ||
           url.pathname.endsWith('.json') ||
           url.pathname.endsWith('.html'));
 }
