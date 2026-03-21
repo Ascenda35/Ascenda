@@ -1,5 +1,9 @@
 import { supabase, getCurrentUser, getUserProfile, getLeaderboard, isUploadAllowed, getTimeUntilUploadAllowed, subscribeToLeaderboard } from './supabase.js';
 
+if (!getUserProfile) {
+  console.error('supabase.js not loaded');
+}
+
 class LeaderboardManager {
   constructor() {
     this.currentBoard = 'general';

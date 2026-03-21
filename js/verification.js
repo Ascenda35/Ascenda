@@ -1,5 +1,9 @@
 import { supabase, getCurrentUser, getSchools, createOTPVerification, verifyOTP } from './supabase.js';
 
+if (!getSchools) {
+  console.error('supabase.js not loaded');
+}
+
 class VerificationManager {
   constructor() {
     this.schools = [];

@@ -1,6 +1,10 @@
 import { supabase, getCurrentUser, getUserProfile, getNextGradingItem, submitReview, addTokens, updateStreak } from './supabase.js';
 import { embedWatermark } from './watermark.js';
 
+if (!getUserProfile) {
+  console.error('supabase.js not loaded');
+}
+
 class GradingManager {
   constructor() {
     this.currentUser = null;

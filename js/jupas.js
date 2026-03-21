@@ -1,5 +1,9 @@
 import { supabase, getCurrentUser, getUserProfile, calculateJUPASScore, getGradeFromScore } from './supabase.js';
 
+if (!getUserProfile) {
+  console.error('supabase.js not loaded');
+}
+
 class JUPASManager {
   constructor() {
     this.currentUser = null;
