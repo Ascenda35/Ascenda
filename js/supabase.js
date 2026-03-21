@@ -29,6 +29,8 @@ export async function signOut() {
 
 // User profile functions
 export async function getUserProfile(userId) {
+  if (!userId) return null;
+  
   const { data, error } = await supabase
     .from('users')
     .select('*')
